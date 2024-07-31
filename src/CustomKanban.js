@@ -15,14 +15,14 @@ const Board = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/cards')
+    fetch('https://nkl-kanban.netlify.app/cards')
       .then(response => response.json())
       .then(data => setCards(data))
       .catch(error => console.error('Error fetching cards:', error));
   }, []);
 
   const saveCards = (newCards) => {
-    fetch('http://localhost:5000/cards', {
+    fetch('https://nkl-kanban.netlify.app/cards', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
